@@ -1,228 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Satyajith Chilappagari | Machine Learning Engineer</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Satyajith Chilappagari, machine learning engineer, AWS Neuron, vLLM, LLM inference, Amazon" name="keywords">
-        <meta content="Machine Learning Engineer at Amazon Annapurna Labs building LLM inference systems for AWS Trainium and Inferentia." name="description">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Satyajith Chilappagari | Machine Learning Engineer</title>
+  <meta content="Satyajith Chilappagari, machine learning engineer, AWS Neuron, vLLM, LLM inference, Amazon, Trainium, Inferentia" name="keywords">
+  <meta content="Machine Learning Engineer at Amazon Annapurna Labs building LLM inference systems for AWS Trainium and Inferentia." name="description">
+  <meta content="Satyajith Chilappagari | Machine Learning Engineer" property="og:title">
+  <meta content="LLM inference, AWS Neuron, vLLM, benchmarking automation, and cloud-scale data systems." property="og:description">
+  <meta content="website" property="og:type">
 
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+  <link href="img/favicon.ico" rel="icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Go to home">
+        <span class="brand-mark">SC</span>
+        <span>
+          <strong>Satyajith</strong>
+          <small>ML Engineer</small>
+        </span>
+      </a>
 
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300;400;600;700;800&display=swap" rel="stylesheet">
+      <button class="nav-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+      </button>
 
-        <!-- Font Awesome -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="#home" data-route="home">Home</a>
+        <a href="#experience" data-route="experience">Experience</a>
+        <a href="#projects" data-route="projects">Projects</a>
+        <a href="#writing" data-route="writing">Writing</a>
+        <a href="#contact" data-route="contact">Contact</a>
+      </nav>
 
-        <!-- Bootstrap and Site Stylesheet -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+      <a class="resume-button" href="assets/Satyajith%20Chilappagari%20Resume%20Aug%2029.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+    </header>
 
-    <body>
-        <div class="wrapper">
-            <div class="sidebar">
-                <div class="sidebar-text d-flex flex-column h-100 justify-content-center text-center">
-                    <img class="mx-auto d-block w-75 bg-primary img-fluid rounded-circle mb-4 p-3" src="img/profile.jpg" alt="Satyajith Chilappagari headshot">
-                    <h1 class="font-weight-bold">Satyajith Chilappagari</h1>
-                    <p class="mb-4">
-                        Machine Learning Engineer building LLM inference systems, benchmarking automation, and cloud-scale data platforms.
-                    </p>
-                    <div class="d-flex justify-content-center mb-4 profile-social">
-                        <a class="btn btn-outline-primary mr-2" href="mailto:csatyajith@gmail.com" aria-label="Email Satyajith"><i class="fas fa-envelope"></i></a>
-                        <a class="btn btn-outline-primary mr-2" href="https://www.linkedin.com/in/csatyajith/" target="_blank" rel="noopener noreferrer" aria-label="Satyajith on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-primary mr-2" href="https://github.com/csatyajith" target="_blank" rel="noopener noreferrer" aria-label="Satyajith on GitHub"><i class="fab fa-github"></i></a>
-                    </div>
-                    <a href="assets/Satyajith%20Chilappagari%20Resume%20Aug%2029.pdf" class="btn btn-lg btn-block btn-primary mt-auto" target="_blank" rel="noopener noreferrer">Download Resume</a>
-                </div>
-                <div class="sidebar-icon d-flex flex-column h-100 justify-content-center text-right">
-                    <i class="fas fa-2x fa-angle-double-right text-primary"></i>
-                </div>
-            </div>
-            <div class="content">
-                <!-- Navbar Start -->
-                <div class="container p-0">
-                    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
-                        <a href="index.html" class="navbar-brand d-block d-lg-none">Satyajith</a>
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                            <div class="navbar-nav m-auto">
-                                <a href="index.html" class="nav-item nav-link active">Home</a>
-                                <a href="about.html" class="nav-item nav-link">Experience</a>
-                                <a href="projects.html" class="nav-item nav-link">Projects</a>
-                                <a href="cars.html" class="nav-item nav-link">Writing</a>
-                                <a href="contact.html" class="nav-item nav-link">Contact</a>
-                                <a href="assets/Satyajith%20Chilappagari%20Resume%20Aug%2029.pdf" class="nav-item nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-                <!-- Navbar End -->
+    <main class="main-stage" id="app" tabindex="-1" aria-live="polite"></main>
 
-                <!-- Hero Start -->
-                <div class="container bg-primary hero-section">
-                    <div class="row align-items-center px-4 py-5">
-                        <div class="col-lg-8">
-                            <p class="eyebrow text-white mb-3">Machine Learning Engineer II at Amazon Annapurna Labs</p>
-                            <h1 class="text-white font-weight-bold mb-4">Building high-throughput LLM inference systems on AWS silicon.</h1>
-                            <p class="lead text-white mb-4">
-                                I work across vLLM, AWS Neuron, Trainium, Inferentia, benchmarking automation, and production data systems - turning model-serving research into reliable developer and customer workflows.
-                            </p>
-                            <div class="hero-actions">
-                                <a href="about.html" class="btn btn-light mr-2 mb-2">View Experience</a>
-                                <a href="projects.html" class="btn btn-outline-light mr-2 mb-2">See Projects</a>
-                                <a href="mailto:csatyajith@gmail.com" class="btn btn-outline-light mb-2">Get in Touch</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-4 mt-lg-0">
-                            <div class="hero-card bg-white">
-                                <p class="small text-uppercase text-muted mb-1">Current focus</p>
-                                <h3 class="font-weight-bold mb-3">LLM inference on AWS Neuron</h3>
-                                <p class="mb-0">Multi-modal inference, speculative decoding, quantization, multi-LoRA, and open-source vLLM enablement for Trainium and Inferentia.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Hero End -->
+    <footer class="site-footer">
+      <span>&copy; <span data-year></span> Satyajith Chilappagari</span>
+      <div class="footer-links">
+        <a href="mailto:csatyajith@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/csatyajith/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/csatyajith" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </footer>
+  </div>
 
-                <!-- Metrics Start -->
-                <div class="container bg-white py-5 px-4">
-                    <div class="row">
-                        <div class="col-md-6 col-xl-3 mb-4">
-                            <div class="metric-tile">
-                                <span>30K+</span>
-                                <p>TPS supported by Alexa real-time ingestion systems.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-3 mb-4">
-                            <div class="metric-tile">
-                                <span>90%</span>
-                                <p>Less developer time spent on LLM benchmarks.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-3 mb-4">
-                            <div class="metric-tile">
-                                <span>60 days to 2</span>
-                                <p>Release timeline improvement for Neuron vLLM enhancements.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-3 mb-4">
-                            <div class="metric-tile">
-                                <span>50%</span>
-                                <p>Memory reduction enabled through FP8 support in PyTorch XLA.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Metrics End -->
-
-                <!-- Focus Start -->
-                <div class="container bg-white pb-5 px-4">
-                    <div class="section-heading mb-4">
-                        <p class="eyebrow mb-2">What I Build</p>
-                        <h2 class="font-weight-bold">Systems for machine learning at production scale</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <div class="profile-card h-100">
-                                <i class="fas fa-brain text-primary mb-3"></i>
-                                <h4 class="font-weight-bold">LLM Inference</h4>
-                                <p>vLLM capabilities for AWS Neuron, including standard and multi-modal inference, speculative decoding, quantization, and multi-LoRA support.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="profile-card h-100">
-                                <i class="fas fa-tachometer-alt text-primary mb-3"></i>
-                                <h4 class="font-weight-bold">ML Platform Automation</h4>
-                                <p>Benchmarking and validation pipelines that shorten feedback loops, catch regressions, and make performance reviews CI/CD-friendly.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="profile-card h-100">
-                                <i class="fas fa-database text-primary mb-3"></i>
-                                <h4 class="font-weight-bold">Data-Intensive Backends</h4>
-                                <p>Event-driven services, staged rollouts, analytics pipelines, and distributed storage patterns across AWS, Kafka, S3, Airflow, and Cassandra.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Focus End -->
-
-                <!-- Experience Preview Start -->
-                <div class="container bg-light py-5 px-4">
-                    <div class="section-heading mb-4">
-                        <p class="eyebrow mb-2">Experience Snapshot</p>
-                        <h2 class="font-weight-bold">From GenAI infrastructure to customer-facing data systems</h2>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <span>July 2024 - Present</span>
-                            <h4>Machine Learning Engineer II, Amazon Annapurna Labs</h4>
-                            <p>Extending vLLM and AWS Neuron support for large-model inference on Trainium and Inferentia.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <span>Feb 2022 - July 2024</span>
-                            <h4>Software Development Engineer, Alexa</h4>
-                            <p>Built real-time ingestion and analytics systems for Alexa Proactive Experiences.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <span>Mar 2017 - Dec 2019</span>
-                            <h4>Backend Developer, Dresslife GmbH</h4>
-                            <p>Engineered event-driven fashion recommendation systems using Kafka, Cassandra, Elasticsearch, and neural networks.</p>
-                        </div>
-                    </div>
-                    <a href="about.html" class="btn btn-primary mt-3">Read Full Experience</a>
-                </div>
-                <!-- Experience Preview End -->
-
-                <!-- Skills Start -->
-                <div class="container bg-white py-5 px-4">
-                    <div class="section-heading mb-4">
-                        <p class="eyebrow mb-2">Toolkit</p>
-                        <h2 class="font-weight-bold">Languages, cloud, ML, and data systems</h2>
-                    </div>
-                    <div class="skill-cloud">
-                        <span>Python</span>
-                        <span>Java</span>
-                        <span>TypeScript</span>
-                        <span>C++</span>
-                        <span>PyTorch</span>
-                        <span>vLLM</span>
-                        <span>AWS Neuron</span>
-                        <span>Docker</span>
-                        <span>Apache Kafka</span>
-                        <span>Airflow</span>
-                        <span>DynamoDB</span>
-                        <span>Cassandra</span>
-                        <span>Elasticsearch</span>
-                        <span>S3</span>
-                        <span>Lambda</span>
-                        <span>Athena</span>
-                    </div>
-                </div>
-                <!-- Skills End -->
-
-                <!-- Footer Start -->
-                <div class="container py-4 bg-secondary text-center">
-                    <p class="m-0 text-white">
-                        &copy; <a class="text-white font-weight-bold" href="index.html">Satyajith Chilappagari</a>. All Rights Reserved.
-                    </p>
-                </div>
-                <!-- Footer End -->
-            </div>
-        </div>
-
-        <!-- Back to Top -->
-        <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <!-- Site Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+  <script src="js/main.js" type="module"></script>
+</body>
 </html>

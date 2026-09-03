@@ -1,17 +1,13 @@
 # Satyajith Chilappagari Personal Site
 
-Static GitHub Pages portfolio for Satyajith Chilappagari.
+Modern single-page portfolio for Satyajith Chilappagari, hosted with GitHub Pages.
 
-## Pages
+## Structure
 
-- `index.html` - profile overview
-- `about.html` - experience and education
-- `projects.html` - selected engineering work
-- `cars.html` - long-form writing sample
-- `contact.html` - contact links and resume
+- `index.html` - app shell and metadata
+- `css/style.css` - responsive visual system
+- `js/main.js` - client-side routing and content rendering
+- `assets/` - resume PDF
+- `img/` - profile image and favicon
 
-## Assets
-
-- `assets/` contains the resume PDF.
-- `img/` contains the profile image, favicon, and images used by the writing sample.
-- `css/style.css` contains Bootstrap-derived template styles plus the custom profile styles.
+The app uses hash routes (`#home`, `#experience`, `#projects`, `#writing`, `#contact`) so it can run as a static site without a build step.
