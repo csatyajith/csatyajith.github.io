@@ -16,12 +16,31 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
+    <!-- Bootstrap and Site Stylesheet -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
 <div class="content">
+    <div class="container p-0">
+        <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
+            <a href="index.html" class="navbar-brand d-block d-lg-none">Satyajith</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav m-auto">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">Experience</a>
+                    <a href="projects.html" class="nav-item nav-link">Projects</a>
+                    <a href="cars.html" class="nav-item nav-link active">Writing</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="assets/Satyajith%20Chilappagari%20Resume%20Aug%2029.pdf" class="nav-item nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
+                </div>
+            </div>
+        </nav>
+    </div>
 
     <!-- About Start -->
     <div class="container bg-white pt-5">
@@ -395,7 +414,7 @@
     <!-- Footer Start -->
     <div class="container py-4 bg-secondary text-center">
         <p class="m-0 text-white">
-            &copy; <a class="text-white font-weight-bold" href="#">Satyajith Chilappagari</a>
+            &copy; <a class="text-white font-weight-bold" href="index.html">Satyajith Chilappagari</a>
         </p>
     </div>
     <!-- Footer End -->
@@ -407,14 +426,8 @@
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
 
-<!-- Contact Javascript File -->
-<script src="mail/jqBootstrapValidation.min.js"></script>
-<script src="mail/contact.js"></script>
-
-<!-- Template Javascript -->
+<!-- Site Javascript -->
 <script src="js/main.js"></script>
 </body>
 
