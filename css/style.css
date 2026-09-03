@@ -184,6 +184,14 @@ a {
   outline: 0;
 }
 
+.scroll-section {
+  scroll-margin-top: 112px;
+}
+
+.scroll-section + .scroll-section {
+  margin-top: 72px;
+}
+
 .view-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 380px;

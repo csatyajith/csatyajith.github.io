@@ -10,4 +10,4 @@ Modern single-page portfolio for Satyajith Chilappagari, hosted with GitHub Page
 - `assets/` - resume PDF
 - `img/` - profile image and favicon
 
-The app uses hash routes (`#home`, `#experience`, `#projects`, `#writing`, `#contact`) so it can run as a static site without a build step.
+The app uses section anchors (`#home`, `#experience`, `#projects`, `#writing`, `#contact`) so the full portfolio is scrollable on one static page without a build step.

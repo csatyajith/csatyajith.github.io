@@ -173,24 +173,18 @@ const writingItems = [
   }
 ];
 
-const routes = {
-  home: renderHome,
-  experience: renderExperience,
-  projects: renderProjects,
-  writing: renderWriting,
-  contact: renderContact
-};
-
 const app = document.querySelector("#app");
-const navLinks = document.querySelectorAll("[data-route]");
+const navLinks = document.querySelectorAll("[data-section-link]");
 const nav = document.querySelector("#site-nav");
 const menuToggle = document.querySelector("[data-menu-toggle]");
+const sectionIds = ["home", "experience", "projects", "writing", "contact"];
 
 document.querySelector("[data-year]").textContent = new Date().getFullYear();
 
 function renderHome() {
   return `
-    <section class="hero-view view-grid">
+    <section class="scroll-section" id="home">
+      <div class="hero-view view-grid">
       <div class="hero-copy">
         <p class="eyebrow">${profile.title} at ${profile.company}</p>
         <h1>${profile.name}</h1>
@@ -207,18 +201,18 @@ function renderHome() {
           <strong>LLM inference systems on AWS silicon</strong>
         </div>
       </aside>
-    </section>
+      </div>
 
-    <section class="stats-grid" aria-label="Impact metrics">
+      <div class="stats-grid" aria-label="Impact metrics">
       ${stats.map(([value, label]) => `
         <article class="stat-card">
           <strong>${value}</strong>
           <span>${label}</span>
         </article>
       `).join("")}
-    </section>
+      </div>
 
-    <section class="section-block">
+      <div class="section-block">
       <div class="section-heading">
         <p class="eyebrow">What I Build</p>
         <h2>Production systems where ML performance meets engineering reliability.</h2>
@@ -231,9 +225,9 @@ function renderHome() {
           </article>
         `).join("")}
       </div>
-    </section>
+      </div>
 
-    <section class="section-block split-panel">
+      <div class="section-block split-panel">
       <div>
         <p class="eyebrow">Toolkit</p>
         <h2>ML, backend, and cloud systems stack.</h2>
@@ -241,19 +235,21 @@ function renderHome() {
       <div class="tag-cloud">
         ${skills.slice(0, 16).map(skill => `<span>${skill}</span>`).join("")}
       </div>
+      </div>
     </section>
   `;
 }
 
 function renderExperience() {
   return `
-    <section class="page-intro">
+    <section class="scroll-section" id="experience">
+      <div class="page-intro">
       <p class="eyebrow">Experience</p>
       <h1>Recent roles and measurable outcomes.</h1>
       <p>From GenAI infrastructure at Amazon Annapurna Labs to real-time Alexa data systems and applied recommendation engines.</p>
-    </section>
+      </div>
 
-    <section class="timeline">
+      <div class="timeline">
       ${experience.map(job => `
         <article class="timeline-card">
           <div class="timeline-marker"></div>
@@ -267,9 +263,9 @@ function renderExperience() {
           </div>
         </article>
       `).join("")}
-    </section>
+      </div>
 
-    <section class="section-block">
+      <div class="section-block">
       <div class="section-heading">
         <p class="eyebrow">Education</p>
         <h2>Computer science and machine learning foundation.</h2>
@@ -283,19 +279,21 @@ function renderExperience() {
           </article>
         `).join("")}
       </div>
+      </div>
     </section>
   `;
 }
 
 function renderProjects() {
   return `
-    <section class="page-intro">
+    <section class="scroll-section" id="projects">
+      <div class="page-intro">
       <p class="eyebrow">Projects</p>
       <h1>Selected engineering work.</h1>
       <p>A focused set of infrastructure, ML platform, backend, and applied AI projects drawn from the resume.</p>
-    </section>
+      </div>
 
-    <section class="project-board">
+      <div class="project-board">
       ${projects.map((project, index) => `
         <article class="project-card">
           <div class="project-topline">
@@ -309,19 +307,21 @@ function renderProjects() {
           </div>
         </article>
       `).join("")}
+      </div>
     </section>
   `;
 }
 
 function renderWriting() {
   return `
-    <section class="page-intro">
+    <section class="scroll-section" id="writing">
+      <div class="page-intro">
       <p class="eyebrow">Writing</p>
       <h1>Clear thinking, written out loud.</h1>
       <p>A small personal corner for long-form decision-making and the tradeoff-heavy thinking that also shows up in engineering work.</p>
-    </section>
+      </div>
 
-    <section class="writing-layout">
+      <div class="writing-layout">
       <article class="feature-note">
         <span>Personal essay</span>
         <h2>My Journey of Choosing a Car</h2>
@@ -335,19 +335,21 @@ function renderWriting() {
           </article>
         `).join("")}
       </div>
+      </div>
     </section>
   `;
 }
 
 function renderContact() {
   return `
-    <section class="page-intro contact-intro">
+    <section class="scroll-section" id="contact">
+      <div class="page-intro contact-intro">
       <p class="eyebrow">Contact</p>
       <h1>Let us talk about ML infrastructure, LLM inference, and backend systems.</h1>
       <p>Based in ${profile.location}. Best reached through email or LinkedIn.</p>
-    </section>
+      </div>
 
-    <section class="contact-grid">
+      <div class="contact-grid">
       <a class="contact-card" href="mailto:${profile.email}">
         <span>Email</span>
         <strong>${profile.email}</strong>
@@ -364,29 +366,31 @@ function renderContact() {
         <span>Resume</span>
         <strong>Download PDF</strong>
       </a>
+      </div>
     </section>
   `;
 }
 
-function navigate(routeName = "home") {
-  const route = routes[routeName] ? routeName : "home";
-  app.innerHTML = routes[route]();
-  app.focus({ preventScroll: true });
-
+function setActiveSection(sectionId) {
   navLinks.forEach(link => {
-    link.classList.toggle("active", link.dataset.route === route);
+    link.classList.toggle("active", link.dataset.sectionLink === sectionId);
   });
+}
 
-  document.body.dataset.route = route;
+function closeMenu() {
   nav.classList.remove("open");
   menuToggle.setAttribute("aria-expanded", "false");
 }
 
-function routeFromHash() {
-  return window.location.hash.replace("#", "") || "home";
+function renderPage() {
+  app.innerHTML = [
+    renderHome(),
+    renderExperience(),
+    renderProjects(),
+    renderWriting(),
+    renderContact()
+  ].join("");
 }
-
-window.addEventListener("hashchange", () => navigate(routeFromHash()));
 
 menuToggle.addEventListener("click", () => {
   const isOpen = nav.classList.toggle("open");
@@ -395,10 +399,49 @@ menuToggle.addEventListener("click", () => {
 
 navLinks.forEach(link => {
   link.addEventListener("click", () => {
-    if (link.dataset.route === routeFromHash()) {
-      navigate(link.dataset.route);
-    }
+    setActiveSection(link.dataset.sectionLink);
+    closeMenu();
   });
 });
 
-navigate(routeFromHash());
+renderPage();
+
+const initialSection = (window.location.hash || "#home").replace("#", "");
+setActiveSection(sectionIds.includes(initialSection) ? initialSection : "home");
+
+const sections = sectionIds
+  .map(id => document.getElementById(id))
+  .filter(Boolean);
+
+requestAnimationFrame(() => {
+  const target = document.getElementById(initialSection);
+
+  if (target) {
+    target.scrollIntoView();
+  }
+});
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    const visible = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+    if (visible) {
+      setActiveSection(visible.target.id);
+    }
+  }, {
+    rootMargin: "-28% 0px -52% 0px",
+    threshold: [0.08, 0.2, 0.4, 0.6]
+  });
+
+  sections.forEach(section => observer.observe(section));
+}
+
+window.addEventListener("hashchange", () => {
+  const nextSection = window.location.hash.replace("#", "");
+
+  if (sectionIds.includes(nextSection)) {
+    setActiveSection(nextSection);
+  }
+});
