@@ -1,4 +1,4 @@
-const resumePath = "assets/Satyajith%20Chilappagari%20Resume%20Aug%2029.pdf";
+const resumePath = "assets/Satyajith%20Chilappagari%20Resume%20-%20Sep%2026.pdf";
 
 const profile = {
   name: "Satyajith Chilappagari",
@@ -8,31 +8,47 @@ const profile = {
   email: "csatyajith@gmail.com",
   linkedin: "https://www.linkedin.com/in/csatyajith/",
   github: "https://github.com/csatyajith",
+  awsGithub: "https://github.com/aws-satyajith",
   summary:
-    "I build production ML infrastructure for large-model inference, benchmarking automation, and cloud-scale data systems across AWS Neuron, vLLM, Trainium, Inferentia, and real-time analytics platforms."
+    "I build production ML infrastructure for large-model inference across AWS Neuron, vLLM, Trainium, and Inferentia, with recent work in async scheduling, speculative decoding, disaggregated inference, release workflows, and benchmarking automation."
 };
 
 const stats = [
-  ["30K+", "TPS supported by Alexa ingestion systems"],
+  ["20-50%", "TPOT reduction from async scheduling on AWS Neuron"],
+  ["~47%", "device execution time reduction for GPT-OSS draft model"],
+  ["7", "vLLM-Neuron releases shipped from 0.2.0 to 0.5.3"],
   ["90%", "less developer time spent on LLM benchmarks"],
   ["6 weeks to 1", "validation cycle reduction for benchmark reviews"],
-  ["60+ days to 2", "release timeline reduction for Neuron vLLM work"],
-  ["50%", "memory reduction enabled with FP8 support"],
-  ["5%", "revenue lift supported by fit recommendations"]
+  ["30K+", "TPS supported by Alexa ingestion systems"]
 ];
 
 const specialties = [
   {
-    label: "LLM Inference",
-    text: "vLLM support for AWS Neuron across standard inference, multi-modal inference, speculative decoding, quantization, and multi-LoRA."
+    label: "Async LLM Serving",
+    text: "Async scheduling and execution on AWS Neuron without per-token CPU-device round trips.",
+    link: ["Design doc", "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/vllm-neuron/docs/design/vllm/async-scheduling-and-async-execution.html"]
   },
   {
-    label: "Benchmarking Automation",
-    text: "CI/CD-friendly pipelines that evaluate frontier models, catch inference regressions, and shorten validation loops."
+    label: "Speculative Decoding",
+    text: "EAGLE3 draft models, data-parallel layers, and fused kernels for faster device execution."
   },
   {
-    label: "Distributed Data Systems",
-    text: "Event-driven ingestion, schema validation, staged rollouts, Parquet pipelines, and analytics datasets at production scale."
+    label: "vLLM Integration",
+    text: "Trainium and Inferentia support for multimodal inference, quantization, and multi-LoRA.",
+    link: ["Merged PRs", "https://github.com/vllm-project/vllm/pulls?q=is:pr+is:merged+author:aws-satyajith"]
+  },
+  {
+    label: "Upstream Releases",
+    text: "Workflows that bring AWS Neuron features from internal packages into open-source vLLM releases.",
+    link: ["Releases", "https://github.com/vllm-project/vllm-neuron/releases?page=1#release-0.5.3"]
+  },
+  {
+    label: "Benchmark Automation",
+    text: "vLLM and LLMPerf pipelines, regression checks, and isolated prefill/decode benchmarks."
+  },
+  {
+    label: "Real-Time Ingestion",
+    text: "Event validation, transformation, dispatch, and analytics pipelines for Alexa Proactive Experiences."
   }
 ];
 
@@ -43,11 +59,13 @@ const experience = [
     place: "Cupertino, CA",
     period: "July 2024 - Present",
     points: [
-      "Extended vLLM support for AWS Trainium and Inferentia using AWS Neuron.",
-      "Created validation pipelines for large models, including LLaMA 3.1 405B.",
-      "Built vLLM and LLMPerf benchmarking automation that reduced benchmark time by more than 90%.",
-      "Designed an upstream workflow that reduced Neuron vLLM release timelines from 60+ days to 2 days.",
-      "Enabled FP8 support in PyTorch XLA, reducing memory usage for quantized model results by 50%."
+      "Owned async scheduling on AWS Neuron end to end, eliminating per-token CPU-device round trips and cutting TPOT by 20-50% across models.",
+      "Optimized EAGLE3 speculative decoding draft models with data-parallel support for the LM head, embedding, and MLP layers.",
+      "Built a fused kernel for the GPT-OSS draft model, cutting device execution time by about 47%.",
+      "Extended vLLM support for Trainium and Inferentia across standard inference, multimodal inference, speculative decoding, quantization, and multi-LoRA.",
+      "Built automated LLM benchmarking and regression pipelines with vLLM and LLMPerf, cutting benchmarking time by 90%+ and validation cycles from 6 weeks to 1.",
+      "Implemented isolated prefill and decode benchmarking for disaggregated inference, improving prioritization and reporting across the organization.",
+      "Designed an upstreaming workflow for AWS Neuron vLLM and the vLLM-Neuron plugin, cutting release timelines from 60+ days to 2 days and personally shipping 7 releases."
     ]
   },
   {
@@ -59,8 +77,7 @@ const experience = [
       "Developed a real-time ingestion platform for Alexa Proactive Experiences supporting 30K+ TPS.",
       "Designed version-supported schema validation for uniform event structure.",
       "Implemented staged production rollouts that limited faulty deployments to 1% of traffic.",
-      "Reduced monthly costs by 40% by replacing Firehose with a custom Parquet writer for S3.",
-      "Managed dataset pipeline dependencies with Apache Airflow."
+      "Reduced monthly costs by 40% by replacing Firehose with a custom Parquet writer for S3."
     ]
   },
   {
@@ -77,72 +94,33 @@ const experience = [
   }
 ];
 
-const projects = [
-  {
-    name: "vLLM on AWS Neuron",
-    type: "GenAI infrastructure",
-    detail:
-      "Extended vLLM capabilities for Trainium and Inferentia across inference modes, quantization, speculative decoding, and multi-LoRA.",
-    tags: ["vLLM", "AWS Neuron", "Trainium", "Inferentia"]
-  },
-  {
-    name: "LLM Benchmarking System",
-    type: "Platform automation",
-    detail:
-      "Integrated vLLM and LLMPerf to evaluate model performance on AWS silicon and reduce developer benchmark effort by more than 90%.",
-    tags: ["LLMPerf", "CI/CD", "Python", "Grafana"]
-  },
-  {
-    name: "Neuron Upstream Workflow",
-    type: "Open-source release",
-    detail:
-      "Moved Neuron vLLM enhancements from internal packages to open source faster, cutting release timelines from 60+ days to 2 days.",
-    tags: ["Git", "Validation", "Release flow"]
-  },
-  {
-    name: "Alexa Proactive Ingestion",
-    type: "Real-time systems",
-    detail:
-      "Built validation, transformation, dispatch, and analytics pipelines for Alexa Proactive Experiences at 30K+ TPS.",
-    tags: ["AWS", "S3", "Parquet", "Athena"]
-  },
-  {
-    name: "Fashion Recommendations",
-    type: "Applied ML",
-    detail:
-      "Built size and style recommendation systems using fit signals, autoencoders, CNN embeddings, Kafka, Cassandra, and Elasticsearch.",
-    tags: ["Kafka", "CNNs", "Cassandra", "Search"]
-  },
-  {
-    name: "NLP Bug Search",
-    type: "Intern project",
-    detail:
-      "Developed an NLP-based bug-search tool at Commvault and placed second among 70 interns in the project competition.",
-    tags: ["NLP", "Search", "ML", "Python"]
-  }
-];
-
 const skills = [
   "Python",
   "Java",
-  "TypeScript",
   "C++",
-  "JavaScript",
+  "TypeScript",
   "PyTorch",
   "vLLM",
   "AWS Neuron",
+  "AWS Neuron SDK",
+  "Trainium",
+  "Inferentia",
+  "Speculative decoding",
+  "EAGLE3",
+  "Async scheduling",
+  "Disaggregated inference",
+  "LLMPerf",
+  "Custom kernel development",
   "Apache Kafka",
   "Docker",
-  "Airflow",
   "DynamoDB",
   "Cassandra",
   "Elasticsearch",
-  "MySQL",
-  "MongoDB",
   "Lambda",
   "S3",
   "Athena",
-  "CloudFormation"
+  "Kinesis",
+  "Grafana"
 ];
 
 const education = [
@@ -160,24 +138,11 @@ const education = [
   }
 ];
 
-const writingItems = [
-  {
-    title: "My Journey of Choosing a Car",
-    text:
-      "A long-form decision essay from the earlier site, now summarized inside the SPA as a personal writing sample about tradeoffs, scoring, and taste."
-  },
-  {
-    title: "How I Think",
-    text:
-      "The same pattern shows up in engineering: compare constraints, make the tradeoffs explicit, and turn subjective preferences into a practical decision."
-  }
-];
-
 const app = document.querySelector("#app");
 const navLinks = document.querySelectorAll("[data-section-link]");
 const nav = document.querySelector("#site-nav");
 const menuToggle = document.querySelector("[data-menu-toggle]");
-const sectionIds = ["home", "experience", "projects", "writing", "contact"];
+const sectionIds = ["home", "build", "experience", "contact"];
 
 document.querySelector("[data-year]").textContent = new Date().getFullYear();
 
@@ -190,7 +155,7 @@ function renderHome() {
         <h1>${profile.name}</h1>
         <p class="hero-summary">${profile.summary}</p>
         <div class="hero-actions">
-          <a class="primary-action" href="#projects">Explore Work</a>
+          <a class="primary-action" href="#build">Explore Work</a>
           <a class="secondary-action" href="${resumePath}" target="_blank" rel="noopener noreferrer">Download Resume</a>
         </div>
       </div>
@@ -211,20 +176,24 @@ function renderHome() {
         </article>
       `).join("")}
       </div>
+    </section>
+  `;
+}
 
-      <div class="section-block">
+function renderBuild() {
+  return `
+    <section class="scroll-section" id="build" aria-labelledby="build-heading">
       <div class="section-heading">
-        <p class="eyebrow">What I Build</p>
-        <h2>Production systems where ML performance meets engineering reliability.</h2>
+        <h2 id="build-heading">What I build</h2>
       </div>
-      <div class="card-grid three-col">
+      <div class="specialty-grid">
         ${specialties.map(item => `
-          <article class="info-card">
-            <span class="card-index">${item.label}</span>
+          <article class="specialty-card">
+            <h3>${item.label}</h3>
             <p>${item.text}</p>
+            ${item.link ? `<a href="${item.link[1]}" target="_blank" rel="noopener noreferrer">${item.link[0]}</a>` : ""}
           </article>
         `).join("")}
-      </div>
       </div>
 
       <div class="section-block split-panel">
@@ -284,62 +253,6 @@ function renderExperience() {
   `;
 }
 
-function renderProjects() {
-  return `
-    <section class="scroll-section" id="projects">
-      <div class="page-intro">
-      <p class="eyebrow">Projects</p>
-      <h1>Selected engineering work.</h1>
-      <p>A focused set of infrastructure, ML platform, backend, and applied AI projects drawn from the resume.</p>
-      </div>
-
-      <div class="project-board">
-      ${projects.map((project, index) => `
-        <article class="project-card">
-          <div class="project-topline">
-            <span>${String(index + 1).padStart(2, "0")}</span>
-            <small>${project.type}</small>
-          </div>
-          <h2>${project.name}</h2>
-          <p>${project.detail}</p>
-          <div class="tag-cloud compact">
-            ${project.tags.map(tag => `<span>${tag}</span>`).join("")}
-          </div>
-        </article>
-      `).join("")}
-      </div>
-    </section>
-  `;
-}
-
-function renderWriting() {
-  return `
-    <section class="scroll-section" id="writing">
-      <div class="page-intro">
-      <p class="eyebrow">Writing</p>
-      <h1>Clear thinking, written out loud.</h1>
-      <p>A small personal corner for long-form decision-making and the tradeoff-heavy thinking that also shows up in engineering work.</p>
-      </div>
-
-      <div class="writing-layout">
-      <article class="feature-note">
-        <span>Personal essay</span>
-        <h2>My Journey of Choosing a Car</h2>
-        <p>The earlier site had a long car-comparison essay. Rather than keep a separate old page, this SPA preserves it as a writing sample concept: a decision matrix, constraints, observations, and a final call.</p>
-      </article>
-      <div class="writing-list">
-        ${writingItems.map(item => `
-          <article class="info-card">
-            <span class="card-index">${item.title}</span>
-            <p>${item.text}</p>
-          </article>
-        `).join("")}
-      </div>
-      </div>
-    </section>
-  `;
-}
-
 function renderContact() {
   return `
     <section class="scroll-section" id="contact">
@@ -361,6 +274,10 @@ function renderContact() {
       <a class="contact-card" href="${profile.github}" target="_blank" rel="noopener noreferrer">
         <span>GitHub</span>
         <strong>github.com/csatyajith</strong>
+      </a>
+      <a class="contact-card" href="${profile.awsGithub}" target="_blank" rel="noopener noreferrer">
+        <span>AWS GitHub</span>
+        <strong>github.com/aws-satyajith</strong>
       </a>
       <a class="contact-card" href="${resumePath}" target="_blank" rel="noopener noreferrer">
         <span>Resume</span>
@@ -385,9 +302,8 @@ function closeMenu() {
 function renderPage() {
   app.innerHTML = [
     renderHome(),
+    renderBuild(),
     renderExperience(),
-    renderProjects(),
-    renderWriting(),
     renderContact()
   ].join("");
 }
