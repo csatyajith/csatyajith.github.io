@@ -214,7 +214,7 @@ function renderExperience() {
     <section class="scroll-section" id="experience">
       <div class="page-intro">
       <p class="eyebrow">Experience</p>
-      <h1>Recent roles and measurable outcomes.</h1>
+      <h2>Recent roles and measurable outcomes.</h2>
       <p>From GenAI infrastructure at Amazon Annapurna Labs to real-time Alexa data systems and applied recommendation engines.</p>
       </div>
 
@@ -224,7 +224,7 @@ function renderExperience() {
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <span>${job.period}</span>
-            <h2>${job.role}</h2>
+            <h3>${job.role}</h3>
             <p class="role-meta">${job.org} | ${job.place}</p>
             <ul>
               ${job.points.map(point => `<li>${point}</li>`).join("")}
@@ -258,7 +258,7 @@ function renderContact() {
     <section class="scroll-section" id="contact">
       <div class="page-intro contact-intro">
       <p class="eyebrow">Contact</p>
-      <h1>Let us talk about ML infrastructure, LLM inference, and backend systems.</h1>
+      <h2>Let us talk about ML infrastructure, LLM inference, and backend systems.</h2>
       <p>Based in ${profile.location}. Best reached through email or LinkedIn.</p>
       </div>
 
